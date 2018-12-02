@@ -13,18 +13,12 @@ function loadXsl(url) {
 	xhr.send();
 }
 
-// Do some analytics
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-21435223-1', 'auto');
-ga('set', 'checkProtocolTask', null);
-
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	switch (request.action) {
 		case 'xv.get-dnd-feedback':
 			sendResponse({ image: xv_dnd_feedback.draw(request.text) });
 			break;
 		case 'xv.copy':
-			ga('send', 'event', 'Interaction', 'Copy tag');
 			var ta = document.getElementById('ta');
 			ta.value = request.text;
 			ta.select();
@@ -51,7 +45,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			chrome.pageAction.hide(sender.tab.id);
 			break;
 		case 'xv.analytics':
-			ga('send', 'event', request.category, request.event, request.label);
 			break;
 	}
 });
@@ -101,10 +94,8 @@ chrome.pageAction.onClicked.addListener(function (tab) {
 		let promise;
 
 		if (urls.includes(tab.url)) {
-			ga('send', 'event', 'Page Action', 'Disable', protocol);
 			promise = removeForcedUrl(tab.url);
 		} else {
-			ga('send', 'event', 'Page Action', 'Enable', protocol);
 			promise = addForcedUrl(tab.url);
 		}
 
