@@ -44,8 +44,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		case 'xv.hide-page-action':
 			chrome.pageAction.hide(sender.tab.id);
 			break;
-		case 'xv.analytics':
-			break;
 	}
 });
 
