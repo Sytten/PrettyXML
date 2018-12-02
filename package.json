@@ -1,31 +1,30 @@
 {
-  "name": "xmlview",
-  "version": "1.0.0",
-  "description": "XV is a browser-based XML viewer, available as a Google Chrome and Safari extensions.",
-  "main": "index.js",
+  "name": "prettyxml",
+  "version": "0.1.0",
+  "description": "Pretty XML is a browser-based XML viewer, available as a Firefox extension.",
   "scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"chrome": "gulp chrome",
-		"watch": "gulp watch"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "firefox": "gulp firefox",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergeche/xmlview.git"
+    "url": "git+https://github.com/Sytten/PrettyXML"
   },
   "keywords": [],
-  "author": "Sergey Chikuyonok <serge.che@gmail.com>",
+  "author": "Emile Fugulin <emilefugulin@hotmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sergeche/xmlview/issues"
+    "url": "https://github.com/Sytten/PrettyXML/issues"
   },
-  "homepage": "https://github.com/sergeche/xmlview#readme",
+  "homepage": "https://github.com/Sytten/PrettyXML#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^9.3.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^7.0.0",
-    "gulp-uglify": "^3.0.0",
-    "postcss-import": "^11.0.0",
-    "postcss-url": "^7.1.2"
+    "gulp-postcss": "^8.0.0",
+    "gulp-uglify": "^3.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-url": "^8.0.0"
   }
 }

@@ -16,7 +16,7 @@ const postcssPlugins = [
 	inlineUrl({ url: 'inline' })
 
 ];
-const outChrome = './dist/chrome';
+const outFirefox = './dist/firefox';
 
 const coreFiles = [
 	'lib/underscore.js',
@@ -36,31 +36,27 @@ const coreFiles = [
 	'clipboard.js'
 ];
 
-gulp.task('chrome', ['chrome:js', 'chrome:css', 'chrome:assets']);
+gulp.task('firefox', ['firefox:js', 'firefox:css', 'firefox:assets']);
 
-gulp.task('chrome:js', () => {
+gulp.task('firefox:js', () => {
 	return gulp.src(coreFiles, { cwd: './src' })
 		.pipe(concat('xv.js'))
 		.pipe(production ? uglify() : pass())
-		.pipe(gulp.dest(outChrome));
+		.pipe(gulp.dest(outFirefox));
 });
 
-gulp.task('chrome:css', () => {
+gulp.task('firefox:css', () => {
 	return gulp.src('./css/xv.css')
 		.pipe(postcss(postcssPlugins))
-		.pipe(gulp.dest(outChrome));
+		.pipe(gulp.dest(outFirefox));
 });
 
-gulp.task('chrome:assets', () => {
-	return gulp.src(['./extensions/chrome/**', './src/dnd_feedback.js'])
-		.pipe(gulp.dest(outChrome));
+gulp.task('firefox:assets', () => {
+	return gulp.src(['./extensions/firefox/**', './src/dnd_feedback.js'])
+		.pipe(gulp.dest(outFirefox));
 });
 
-gulp.task('watch', ['chrome'], () => {
-	gulp.watch(['./src/**', './css/**', './extensions/chrome/**'], ['chrome']);
-});
-
-gulp.task('default', ['chrome']);
+gulp.task('default', ['firefox']);
 
 function pass() {
 	return new stream.PassThrough({ objectMode: true });
