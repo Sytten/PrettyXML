@@ -39,10 +39,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			chrome.storage.local.set(payload);
 			break;
 		case 'xv.show-page-action':
-			chrome.pageAction.show(sender.tab.id);
+			browser.pageAction.show(sender.tab.id);
 			break;
 		case 'xv.hide-page-action':
-			chrome.pageAction.hide(sender.tab.id);
+			browser.pageAction.hide(sender.tab.id);
 			break;
 	}
 });
@@ -84,7 +84,7 @@ function removeForcedUrl(url) {
 	});
 }
 
-chrome.pageAction.onClicked.addListener(function (tab) {
+browser.pageAction.onClicked.addListener(function (tab) {
 	// toggle forced XV display for current url
 	getForcedUrls().then(urls => {
 		const m = (tab.url || '').match(/^\w+:/);
