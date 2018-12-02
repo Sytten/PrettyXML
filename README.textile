@@ -1,10 +1,10 @@
-*Note*: This is a fork of the very good extention "XV Viewer":https://github.com/sergeche/xmlview
+*Note*: This is a fork of the very good extension "XV Viewer":https://github.com/sergeche/xmlview
+
+h1. Pretty XML
 
 Pretty XML is a browser-based XML viewer, available as a Firefox extension.
 
-!http://files.chikuyonok.ru/xv/screenshot.png?v=2!
-
-"Online demo":http://files.chikuyonok.ru/xv/ (works in Chrome, Safari, Firefox)
+!https://raw.githubusercontent.com/Sytten/PrettyXML/master/screenshot.png!
 
 h2. Current features
 
@@ -16,19 +16,6 @@ _Google Chrome users: click on element will copy XPath to clipboard_
 
 h3. Download
 
-* "Google Chrome extension":https://chrome.google.com/webstore/detail/eeocglpgjdpaefaedpblffpeebgmgddk
-* "Safari extension":http://files.chikuyonok.ru/xv/xv.safariextz
+_Soon_
 
 You can also download an "XSL stylesheet":https://github.com/sergeche/xmlview/downloads and use it for styling XML files with @<?xml-stylesheet type="text/xsl" href="xv-browser.xsl"?>@
-
-h3. Installation
-
-h4. Chrome
-* Got to chrome://extensions/ and Enable XV — XML Viewer. If you want the viewer to automatically process XML feeds, Click on Options and tick the box <strong>Intercept requests for XML, RSS and ATOM documents</strong>
-
-h3. Note for Safari on Mac plugin
-
-Due to plugin’s nature, the styled XML is very unresponsive on mouse hover events (like Quick XPath mode) so you have to click on area of interest to get focus. I’m looking for a solutions of this problem.
-
-------------------
-XV design is inspired by MacRabbit’s "Espresso editor":http://macrabbit.com/espresso/
