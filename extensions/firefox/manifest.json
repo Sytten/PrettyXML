@@ -1,0 +1,42 @@
+{
+	"name" : "Pretty XML",
+	"version" : "0.1.0",
+	"description" : "Powerful XML viewer for Firefox",
+	"manifest_version": 2,
+	"background": {
+		"page": "background.html"
+	},
+	"permissions" : [
+		"tabs",
+		"clipboardWrite",
+		"webRequest",
+		"webRequestBlocking",
+		"storage",
+		"http://*/*",
+		"https://*/*"
+	],
+	"options_ui": {
+		"page": "options.html"
+	},
+	"icons": {
+		"16": "icon-16.png",
+		"48": "icon-48.png",
+		"128": "icon-128.png"
+	},
+	"content_scripts": [{
+		"js": ["xv.js", "controller.js"],
+		"matches": ["http://*/*", "https://*/*", "file://*/*"],
+		"run_at": "document_start"
+	}],
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com https://*.carbonads.com https://sup.emmet.io; object-src 'self'",
+	"web_accessible_resources": ["xv.css"],
+
+	"page_action": {
+		"default_icon": {
+			"16": "page-action-16.png",
+			"24": "page-action-24.png",
+			"32": "page-action-32.png"
+		},
+		"default_title": "Toggle page rendering with XV plugin"
+	}
+}
