@@ -246,27 +246,3 @@
 .xv-outline-collapsed .xv-outline-footer {
 	display:none;
 }
-
-.carbon-img {
-	display: block;
-	float: left;
-	margin: 5px;
-}
-
-.carbon-text {
-	line-height: 1.4;
-	text-decoration: none;
-	display: block;
-	min-width: 100px;
-	overflow: hidden;
-}
-
-.carbon-text:hover {
-	text-decoration: underline;
-}
-
-.carbon-poweredby {
-	display: block;
-	margin-top: 5px;
-	color: #aaa;
-}
