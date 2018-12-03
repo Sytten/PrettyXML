@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const inlineImport = require('postcss-import');
 const inlineUrl = require('postcss-url');
 const autoprefixer = require('autoprefixer');
+const zip = require('gulp-zip');
 
 const production = process.env.NODE_ENV === 'production';
 const postcssPlugins = [
@@ -17,6 +18,7 @@ const postcssPlugins = [
 
 ];
 const outFirefox = './dist/firefox';
+const version = '0.1.0';
 
 const coreFiles = [
 	'lib/underscore.js',
@@ -55,6 +57,14 @@ gulp.task('firefox:assets', () => {
 	return gulp.src(['./extensions/firefox/**', './src/dnd_feedback.js'])
 		.pipe(gulp.dest(outFirefox));
 });
+
+gulp.task('firefox:release', ['firefox'], () => {
+	return gulp.src(`${outFirefox}/**`)
+        .pipe(zip(`prettyxml.${version}.zip`))
+        .pipe(gulp.dest('dist/releases'));
+});
+
+gulp.task('release', ['firefox:release']);
 
 gulp.task('default', ['firefox']);
 
