@@ -16,6 +16,6 @@ _Google Chrome users: click on element will copy XPath to clipboard_
 
 h3. Download
 
-_Soon_
+* "Firefox extension":https://addons.mozilla.org/en-CA/firefox/addon/pretty-xml/
 
 You can also download an "XSL stylesheet":https://github.com/sergeche/xmlview/downloads and use it for styling XML files with @<?xml-stylesheet type="text/xsl" href="xv-browser.xsl"?>@
